@@ -4,7 +4,7 @@ import { StyleSheet, Text, View  ,TextInput} from 'react-native';
 
 export default function App() {
 
-  const [name, setname] = useState('Gimna')
+  const [name, setname] = useState('Gimna katugampala')
   const [age, setage] = useState(20)
 
 
