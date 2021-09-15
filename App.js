@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { StyleSheet, Text, View ,Button ,ScrollView, FlatList ,TouchableOpacity, Alert} from 'react-native';
+import { StyleSheet, Text, View ,Button ,ScrollView, FlatList ,TouchableOpacity, Alert,TouchableWithoutFeedback,Keyboard} from 'react-native';
 import AddTodo from './components/AddTodo';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem'
@@ -55,11 +55,13 @@ export default function App() {
 
 
   return (
+    <TouchableWithoutFeedback onPress={() => {
+      Keyboard.dismiss()
+      console.log('dismissed keyboard')
+    }}>
     <View style={styles.container}>
-
       <Header />
       <View style={styles.content}>
-      
       <AddTodo submitHanlder={submitHanlder} />
 
       <View style={styles.list}>
@@ -74,7 +76,7 @@ export default function App() {
 
       </View>
       </View>
-
+    
      
       {/* <FlatList 
       numColumns={2}
@@ -96,6 +98,8 @@ export default function App() {
       )}
       </ScrollView> */}
     </View>
+    </TouchableWithoutFeedback>
+
   );
 }
 
