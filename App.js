@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { StyleSheet, Text, View ,Button ,ScrollView, FlatList ,TouchableOpacity} from 'react-native';
+import AddTodo from './components/AddTodo';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem'
 
@@ -35,19 +36,30 @@ export default function App() {
     })
   }
 
+  const submitHanlder = (text) =>{
+    settodos((prevTodos) => {
+      return [
+        {text:text,key:Math.random().toString()},
+        ...prevTodos
+      ]
+    })
+  }
+
   return (
     <View style={styles.container}>
 
       <Header />
       <View style={styles.content}>
-      {/* to form */}
+      
+      <AddTodo submitHanlder={submitHanlder} />
+
       <View style={styles.list}>
 
+        {/* All the tasks */}
         <FlatList
          data={todos}
         renderItem={({item}) => (
-
-          <TodoItem item={item} pressHandler={pressHandler} />
+          <TodoItem item={item} pressHandler={pressHandler}  />
         )}
         />
 
