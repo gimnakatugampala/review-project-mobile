@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { StyleSheet, Text, View ,Button ,ScrollView, FlatList ,TouchableOpacity, Alert,TouchableWithoutFeedback,Keyboard} from 'react-native';
 import AddTodo from './components/AddTodo';
 import Header from './components/Header';
+import Sandbox from './components/Sandbox';
 import TodoItem from './components/TodoItem'
 
 export default function App() {
@@ -99,6 +100,7 @@ export default function App() {
       </ScrollView> */}
     </View>
     </TouchableWithoutFeedback>
+    // <Sandbox />
 
   );
 }
@@ -107,16 +109,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop:40,
-    paddingHorizontal:20
+    // paddingTop:40,
+    // paddingHorizontal:20
     // alignItems: 'center',
     // justifyContent: 'center',
   },
   content:{
-    padding:40
+    padding:40,
+    backgroundColor:'pink',
+    flex:1
   },
   list:{
-    marginTop:20
+    marginTop:20,
+    backgroundColor:'yellow',
+    flex:1
   }
   // item:{
   //   marginTop:24,
